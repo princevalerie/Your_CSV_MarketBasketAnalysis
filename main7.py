@@ -90,7 +90,8 @@ if uploaded_file is not None:
 
         # Optionally, show the complete analysis results if needed
         st.write("Hasil Analisis Lengkap:")
-        st.dataframe(product_association[['antecedents', 'consequents', 'antecedent support', 'consequent support', 'support', 'confidence', 'lift', 'leverage', 'conviction', 'zhangs_metric']])
+        st.dataframe(product_association[['antecedents', 'consequents', 'confidence']])
+        #st.dataframe(product_association[['antecedents', 'consequents', 'antecedent support', 'consequent support', 'support', 'confidence', 'lift', 'leverage', 'conviction', 'zhangs_metric']])
 
     except Exception as e:
         st.error(f"Tidak Ada Hasil Analisis: {e}")
