@@ -37,7 +37,7 @@ if uploaded_file is not None:
         st.dataframe(data.head())
         
         # Selecting 'Order ID' column
-        order_id_column = st.selectbox("Pilih kolom untuk Order ID:", data.columns)
+        order_id_column = st.selectbox("Pilih kolom untuk Order Id / Id Transaksi:", data.columns)
         
         # Selecting 'Item Name' column
         item_column = st.selectbox("Pilih kolom untuk Nama Barang:", data.columns)
