@@ -47,7 +47,7 @@ if uploaded_file is not None:
         data = data.dropna(subset=[order_id_column, item_column])
         
         # Set confidence threshold with step 0.1
-        confidence_threshold = st.slider("Atur threshold untuk Confidence:", 0.0, 1.0, 0.5, step=0.1)
+        confidence_threshold = st.slider("Atur threshold untuk Confidence:", 0.5, 1.0, 0.6, step=0.1)
 
         # Transform data to appropriate format for analysis
         basket = data.groupby([order_id_column, item_column])[item_column].count().unstack().reset_index().fillna(0).set_index(order_id_column)
@@ -93,4 +93,4 @@ if uploaded_file is not None:
         st.dataframe(product_association[['antecedents', 'consequents', 'antecedent support', 'consequent support', 'support', 'confidence', 'lift', 'leverage', 'conviction', 'zhangs_metric']])
 
     except Exception as e:
-        st.error(f"Error: {e}")
+        st.error(f"Tidak Ada Hasil Analisis: {e}")
